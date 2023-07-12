@@ -9,7 +9,9 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
+from os.path import dirname, join
+from dotenv import load_dotenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -86,25 +88,24 @@ WSGI_APPLICATION = 'django_crud_api.wsgi.application'
 #     }
 # }
 
+load_dotenv(verbose=True)
+dotenv_path = join(dirname(__file__), ".env")
+
+db_username = os.environ.get("DB_USERNAME", "user_test")
+db_pass = os.environ.get("DB_PASS", "postgres")
+db_name = os.environ.get("DB_NAME", "test_db")
+db_port = os.environ.get("DB_PORT", "5432")
+db_host = os.environ.get("DB_HOST", "localhost")
 # Postgresql
 DATABASES = {
-
     'default': {
-
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-        'NAME': 'datos_empleados',
-
-        'USER': 'root',
-
-        'PASSWORD': 'root',
-
-        'HOST': 'localhost',
-
-        'PORT': '5434',
-
+        'NAME': db_name,
+        'USER': db_username,
+        'PASSWORD': db_pass,
+        'HOST': db_host,
+        'PORT': db_port,
     }
-
 }
 
 # Password validation

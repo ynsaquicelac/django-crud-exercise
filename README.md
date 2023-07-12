@@ -38,7 +38,7 @@
 
 5. Open http://127.0.0.1:8000/
 
-### Create SuperUSer
+### Create SuperUser
 
 ```
 python3 manage.py createsuperuser
@@ -60,7 +60,8 @@ https://pypi.org/project/django-cors-headers/
 
 ### Structure
 
-- *django_crud_api/setting*: the file where the whole project is configured
+- *django_crud_api/setting.py*: The file where the whole project is configured
+- *manage.py*: With this file we execute commands to communicate with django, example: run the server, make migrations or create databases
 
 ### How to add a new app?
 

@@ -17,7 +17,7 @@ remove-db-container:
 	docker rm exercise-db
 
 remove-db-volume:
-	docker volume rm exercise-db
+	docker volume rm exercise_db
 
 remove-db:
 	make stop-db; make remove-db-container; make remove-db-volume
