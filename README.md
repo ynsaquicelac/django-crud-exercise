@@ -113,3 +113,8 @@ $ python3 manage.py migrate datos
     $ npm run dev
     ```
 4. open:  http://localhost:5173/
+
+
+
+https://github.com/ynsaquicelac/django-crud-exercise/assets/58993294/6c97b2c2-b1dc-4cab-8796-e8a87874402b
+
